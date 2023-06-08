@@ -1,6 +1,7 @@
 package com.ahabilet.services.abstracts;
 
 
+import com.ahabilet.dto.RegisteredPassengerRequest;
 import com.ahabilet.models.RegisteredPassenger;
 import com.ahabilet.models.User;
 
@@ -9,10 +10,10 @@ import java.util.List;
 public interface RegisteredPassengerService {
 
 
-    List<RegisteredPassenger> getAllUsers(Long registeredPassengerId);
+    List<RegisteredPassenger> getAllRegisteredPassenger(Long userId);
 
-    void createOneUser(RegisteredPassenger newPassenger);
+    void createOneRegisteredPassenger(RegisteredPassengerRequest newPassenger);
 
 
-    void deleteOneUser(Long registeredPassengerId);
+    void deleteOneRegisteredPassenger(Long registeredPassengerId);
 }

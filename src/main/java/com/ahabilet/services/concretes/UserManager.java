@@ -2,7 +2,6 @@ package com.ahabilet.services.concretes;
 
 import com.ahabilet.models.User;
 import com.ahabilet.repositories.UserRepository;
-import com.ahabilet.requests.PasswordUpdateRequest;
 import com.ahabilet.services.abstracts.UserService;
 import org.springframework.stereotype.Service;
 
@@ -32,30 +31,6 @@ public class UserManager implements UserService {
     }
 
     @Override
-    public boolean updatePassword(PasswordUpdateRequest request) {
-        String oldPassword = request.getOldPassword();
-        String newPassword = request.getNewPassword();
-        String confirmPassword = request.getConfirmPassword();
-
-        if(!verifyOldPassword(oldPassword)){
-            //
-            return  false;
-        }else if(!newPassword.equals((confirmPassword))){
-            return false;
-        }else{
-            // userRepository.save(newPassword);
-            return true;
-        }
-    }
-
-    private boolean verifyOldPassword(String oldPassword) {
-
-        //  db den eski şifre alınacak
-        //  kontrol edilecek yanlış ise false dönecek
-        return true;
-    }
-
-    @Override
     public void deleteOneUser(Long userId) {
         /* Optional<User> user = userRepository.findById(userId);
         user.get().setActive(false);
@@ -64,5 +39,10 @@ public class UserManager implements UserService {
         User user = userRepository.findById(userId).orElse(null);
         user.setActive(false);
         userRepository.save(user);
+    }
+
+    @Override
+    public User getOneUser(Long userId) {
+        return userRepository.findById(userId).orElse(null);
     }
 }

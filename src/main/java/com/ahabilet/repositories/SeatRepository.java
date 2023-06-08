@@ -1,9 +1,9 @@
 package com.ahabilet.repositories;
 
-import com.ahabilet.models.User;
+import com.ahabilet.models.Seat;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface SeatRepository extends JpaRepository<Seat, Long> {
 }

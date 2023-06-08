@@ -8,6 +8,5 @@ import java.util.List;
 
 @Repository
 public interface RegisteredPassengerRepository extends JpaRepository<RegisteredPassenger, Long> {
-    List<RegisteredPassenger> findAllById(Long registeredPassengerId);
-    // List<RegisteredPassenger> findAllByUserId(Long userId);
+    List<RegisteredPassenger> findAllByUserId(Long userId);
 }
