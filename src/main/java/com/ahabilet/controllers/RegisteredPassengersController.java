@@ -1,6 +1,7 @@
 package com.ahabilet.controllers;
 
 import com.ahabilet.dto.RegisteredPassengerRequest;
+import com.ahabilet.dto.RegisteredPassengerUpdateRequest;
 import com.ahabilet.models.RegisteredPassenger;
 import com.ahabilet.models.User;
 import com.ahabilet.services.abstracts.RegisteredPassengerService;
@@ -29,6 +30,12 @@ public class RegisteredPassengersController {
     public ResponseEntity<?> createOneRegisteredPassenger(@RequestBody RegisteredPassengerRequest newPassenger){
         registeredPassengerService.createOneRegisteredPassenger(newPassenger);
         return ResponseEntity.ok("Başarıyla eklenmiştir");
+    }
+
+    @PutMapping("/registered-passenger/update{registeredPassengerId}")
+    public ResponseEntity<?> updateOneRegisteredPassenger(@PathVariable Long registeredPassengerId,@RequestBody RegisteredPassengerUpdateRequest newRegisteredPassenger){
+        registeredPassengerService.updateOneRegisteredPassenger(registeredPassengerId,newRegisteredPassenger);
+        return ResponseEntity.ok("Başarıyla güncellenmiştir");
     }
 
     @DeleteMapping("/registered-passenger/delete/{registeredPassengerId}")

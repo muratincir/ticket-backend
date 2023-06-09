@@ -2,8 +2,8 @@ package com.ahabilet.services.abstracts;
 
 
 import com.ahabilet.dto.RegisteredPassengerRequest;
+import com.ahabilet.dto.RegisteredPassengerUpdateRequest;
 import com.ahabilet.models.RegisteredPassenger;
-import com.ahabilet.models.User;
 
 import java.util.List;
 
@@ -16,4 +16,6 @@ public interface RegisteredPassengerService {
 
 
     void deleteOneRegisteredPassenger(Long registeredPassengerId);
+
+    void updateOneRegisteredPassenger(Long registeredPassengerId, RegisteredPassengerUpdateRequest newRegisteredPassenger);
 }
